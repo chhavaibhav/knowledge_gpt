@@ -26,15 +26,17 @@ MODEL_LIST = ["gpt-3.5-turbo", "gpt-4"]
 # Uncomment to enable debug mode
 # MODEL_LIST.insert(0, "debug")
 
-st.set_page_config(page_title="KnowledgeGPT", page_icon="📖", layout="wide")
-st.header("📖KnowledgeGPT")
+st.set_page_config(page_title="Amotions Demo",
+                   page_icon="https://www.amotionsinc.com/navbar-logo.svg")
+st.image("https://www.amotionsinc.com/navbar-logo.svg")
+st.title("Amotions demo")
 
 # Enable caching for expensive functions
 bootstrap_caching()
 
-sidebar()
+#sidebar()
 
-openai_api_key = st.session_state.get("OPENAI_API_KEY")
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 
 if not openai_api_key:
